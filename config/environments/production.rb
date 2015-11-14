@@ -20,6 +20,7 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+  config.assets.precompile += %w( randomizer.js )
   # Disable Rails's static asset server (Apache or NGINX will already do this).
   config.serve_static_assets = false
 
