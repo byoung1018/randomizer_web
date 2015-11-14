@@ -1,0 +1,31 @@
+<form id="list" action="/lists" method="post"   value="<%= form_authenticity_token %>">
+  <input
+  type="hidden"
+  name="authenticity_token"
+  value="<%= form_authenticity_token %>">
+
+  <div>
+    <label>List Name:
+      <input type="text" name="list[name]"
+      id="name" value="<%=@list.name if @list%>">
+    </label>
+    <input type="submit" value="Save List">
+  </div>
+
+  <% if @choices %>
+    <%@choices.each do |choice| %>
+      <div class="choice-container">
+        <input class="choice" name="list[choices][]" type="text"
+               value="<%=choice.text%>">
+        <button class="remove-choice">-</button>
+      </div>
+    <% end %>
+  <% end %>
+
+
+
+  <button id="pick-random">Pick Random Choice</button>
+</form>
+<button id="add-choice">+</button>
+<h2 class="chosen"></h2>
+<%= javascript_include_tag 'randomizer' %>

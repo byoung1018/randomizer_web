@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'static_pages#root'
-  resources :lists, only: [:create]
+  devise_for :users do
+
+  end
+  root to: 'lists#new'
+  resources :users do
+    resources :lists#, only: [:create, :show]
+  end
+
 end
