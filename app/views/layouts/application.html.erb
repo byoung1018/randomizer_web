@@ -9,7 +9,7 @@
 <body>
   <%if user_signed_in? %>
     <%=button_to('sign_out', 'users/sign_out', method: "delete")%>
-  <%else%>
+  <%elsif !current_page?(controller:"devise/sessions", action:"new")%>
     <%=link_to "Sign In", "/users/sign_in"%>
   <%end%>
 
