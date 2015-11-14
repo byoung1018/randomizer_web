@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%if user_signed_in? %>
+    <%=button_to('sign_out', 'users/sign_out', method: "delete")%>
+  <%else%>
+    <%=link_to "Sign In", "/users/sign_in"%>
+  <%end%>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
