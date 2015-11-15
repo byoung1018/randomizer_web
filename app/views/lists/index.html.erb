@@ -1,0 +1,17 @@
+<h1>Lists</h1>
+
+<% if @lists.empty? %>
+  <h1>No Lists Saved</h1>
+<% else %>
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+        <%=link_to list.name, [current_user, list]%>
+      </li>
+    <% end %>
+  </ul>
+<% end%>
+
+<div id="name">
+  <%=link_to "Create a New List", root_path%>
+</div>

@@ -19,4 +19,9 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name, choices: [])
   end
 
+  def index
+    @lists = current_user.lists
+    # byebug
+  end
+
 end

@@ -8,6 +8,7 @@
 </head>
 <body>
   <%if user_signed_in? %>
+    <%=link_to "My Lists", user_lists_path(current_user) %>
     <%=button_to('sign_out', 'users/sign_out', method: "delete")%>
   <%elsif !current_page?(controller:"devise/sessions", action:"new")%>
     <%=link_to "Sign In", "/users/sign_in"%>

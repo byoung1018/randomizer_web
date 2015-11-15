@@ -1,28 +1,12 @@
 == README
+to do:
+check for empty list choose bug
+ignore empty fields when choosing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+just use show page - route root there
+check for name already exists when saving -> editing
+add list index for user
+add current user access check for lists security check 
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

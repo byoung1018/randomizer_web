@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   end
   root to: 'lists#new'
-  resources :users do
-    resources :lists#, only: [:create, :show]
+  resources :users, only: [] do
+    resources :lists, only: [:create, :show, :index]
   end
 
 end
