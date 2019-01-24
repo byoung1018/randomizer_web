@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151114051810) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "choices", force: true do |t|
+  create_table "choices", force: :cascade do |t|
     t.integer  "owner_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20151114051810) do
 
   add_index "choices", ["owner_id"], name: "index_choices_on_owner_id", using: :btree
 
-  create_table "list_items", force: true do |t|
+  create_table "list_items", force: :cascade do |t|
     t.integer  "list_id",    null: false
     t.integer  "choice_id",  null: false
     t.datetime "created_at", null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151114051810) do
   add_index "list_items", ["choice_id"], name: "index_list_items_on_choice_id", using: :btree
   add_index "list_items", ["list_id"], name: "index_list_items_on_list_id", using: :btree
 
-  create_table "lists", force: true do |t|
+  create_table "lists", force: :cascade do |t|
     t.integer  "owner_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20151114051810) do
 
   add_index "lists", ["owner_id"], name: "index_lists_on_owner_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

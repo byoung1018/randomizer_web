@@ -10,6 +10,10 @@ class ListsController < ApplicationController
     end
   end
 
+  def new
+    @choices = param_choices
+  end
+
   def show
     @list = List.find(params[:id])
     @choices = @list.choices
@@ -21,7 +25,14 @@ class ListsController < ApplicationController
 
   def index
     @lists = current_user.lists
-    # byebug
   end
 
+  def param_choices
+    return [Choice.new(text: '')] unless params[:choices]
+
+    params[:choices].split(/\, | or /).
+      map do |choice_text|
+        Choice.new(text: choice_text)
+      end
+  end
 end

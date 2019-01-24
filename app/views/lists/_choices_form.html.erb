@@ -11,7 +11,7 @@
     </label>
     <input type="submit" value="Save List">
   </div>
-
+  <button id="pick-random">Pick Random Choice</button>
   <% if @choices %>
     <%@choices.each do |choice| %>
       <div class="choice-container">
@@ -23,8 +23,6 @@
   <% end %>
 
 
-
-  <button id="pick-random">Pick Random Choice</button>
 </form>
 <button id="add-choice">+</button>
 <h2 class="chosen"></h2>

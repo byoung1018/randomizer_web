@@ -14,7 +14,7 @@
     }
 
     function pickRandom(event) {
-        event.preventDefault();
+        if (event) event.preventDefault();
         var choices = getChoices();
         var choice = randomElement(choices);
         console.log("this");
@@ -44,4 +44,5 @@
         return choices[num];
     }
 
+    pickRandom();
 })();
