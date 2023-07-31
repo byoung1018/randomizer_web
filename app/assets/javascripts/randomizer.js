@@ -2,7 +2,7 @@
     $("#add-choice").on("click", addChoice);
     $("#pick-random").on("click", pickRandom);
     $("#list").on("click", ".remove-choice", removeChoice);
-
+    console.log('this gets loaded')
     function addChoice(event) {
         var newChoice = $(
             '<div class="choice-container">' +
